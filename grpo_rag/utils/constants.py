@@ -1,0 +1,7 @@
+MEMORY_BUFFER_PATH = "grpo_rag/utils/memory_buffer.jsonl"
+DATA_PATH = "grpo_rag/data/DataScience_QA.csv"
+DATA_X_COLUMN = "Question"
+DATA_Y_COLUMN = "Answer"
+RESULTS_PATH = "grpo_rag/results/"
+RESULTS_BASELINE_FILE = "baseline_results.jsonl"
+RESULTS_POLICY_FILE = "policy_results.jsonl"
