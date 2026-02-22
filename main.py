@@ -1,10 +1,9 @@
-import os
-import pandas as pd
+
 from dotenv import load_dotenv
 from grpo_rag.utils.openai_utils import (
     get_gpt_response, get_gpt_rollouts, generate_baseline_prompt, generate_policy_prompt
 )
-from grpo_rag.utils.constants import DATA_PATH, MEMORY_BUFFER_PATH
+from grpo_rag.utils.constants import MEMORY_BUFFER_PATH
 from grpo_rag.utils.grpo_utils import get_grpo_advantage_score
 from grpo_rag.utils.memory_buffer_utils import (
     append_memory_entry, 
@@ -18,11 +17,11 @@ load_dotenv()
 
 def main():
     print("Hello from grpo-rag!")
-    num_samples = 3
+    num_samples = 100
     seed = 42
-    num_rollout_answers = 2
+    num_rollout_answers = 5
 
-    rollout_samples = 1
+    rollout_samples = 5
 
     print("set up test train")
 
