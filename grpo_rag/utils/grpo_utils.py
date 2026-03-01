@@ -5,7 +5,7 @@ import numpy as np
     
 # inital policy is only based on answer length
 def get_answer_length(answer_rollouts: List[str]) -> List[int]:
-    return [len(answer.split()) for answer in answer_rollouts]
+    return [len(answer.split())*-1 for answer in answer_rollouts]
 
 
 def calculate_advantage_scores(rewards: List[int]) -> List[float]:

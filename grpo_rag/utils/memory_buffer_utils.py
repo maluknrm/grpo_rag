@@ -105,3 +105,12 @@ def sample_rollouts(filepath, n, seed=None):
         raise ValueError(f"Requested {n} samples, but file only contains {len(records)} records.")
 
     return random.sample(records, n)
+
+def transform_memory_entry(entry: MemoryEntry) -> str:
+    answers_string = ", ".join([f"answer: {entry['answers'][i]} with the score: {entry['advantage_scores'][i]}" for i in range(len(entry['answers']))])
+
+    return f"""
+    Question: {entry['query']}
+    with answers and according scores:
+    {answers_string}
+    """

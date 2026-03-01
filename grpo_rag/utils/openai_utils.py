@@ -24,7 +24,9 @@ def generate_policy_prompt(question, memory_entries):
         You will receive questions and previous answers. The examples yield several
         answers to one questions, each with an advantage score. A high score means that
         an answer was successful. A low score means that the answer was less succesfull.
-        Based on these examples derive how to answer the incoming question.
+        Derive the policy based on how the the examples with high advantage scores are different
+        to the examples with lower scores **in their own group**. Based on within group differences
+        adjust the answering policy and generate an answer the incoming question.
 
         _____________
         EXAMPLES:
@@ -33,6 +35,10 @@ def generate_policy_prompt(question, memory_entries):
 
        Now generate an answer to this question with the derived answering policy.
         {question}
+
+
+        First try to derive the policy based on the examples. USe the <reason> token when you elaborate
+        on the ploicy. The answer the question. Use the <answer> token to imply that you are outputting the question.
     """
     return prompt
 
